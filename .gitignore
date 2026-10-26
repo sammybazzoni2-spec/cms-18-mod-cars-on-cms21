@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Game assets and mod files belong to their owners; keep them out of the repo.
+samples/
+*.unity3d
+*.bundle
+*.assetbundle
+*.assets
+*.resS
+*.zip
+*.rar
+*.7z
+
+# Generated reports
+reports/
