@@ -1,47 +1,37 @@
 # cms-18-mod-cars-on-cms21
 
-Tooling to study how Car Mechanic Simulator 2018 mod cars are put together, so they can be ported to Car Mechanic Simulator 2021.
+Tooling to study how Car Mechanic Simulator 2018 mod cars differ from Car Mechanic Simulator 2021 cars, with the aim of porting CMS 2018 mods to CMS 2021.
 
 ## Status
 
-Early scaffold. There is **no working converter yet**. What exists is the groundwork for finding out what a port needs:
+Early research stage. There is **no working converter yet**, and nothing here has been tested inside the game.
 
-- `cms_tools/inspect_bundle.py` reads a Unity asset bundle (or a folder of them) with [UnityPy](https://github.com/K0lb3/UnityPy) and writes a JSON report: Unity version, object types, meshes, textures, GameObjects, and the data fields of scripts and text assets.
-- `cms_tools/compare_reports.py` diffs two of those reports, for example a CMS 2018 car against a CMS 2021 car.
+What has been done: one real CMS 2018 car (1951 Holden FX Coupe Utility) and one real CMS 2021 car (1969 Camaro RS SS) were compared. The verified differences are written up in [docs/format-differences.md](docs/format-differences.md). The short version:
 
-These scripts have not yet been run against real CMS bundles. Expect to adjust them once you see what the files actually contain.
+- The CMS 2018 `.cms` bundle starts with `SnityFS` instead of `UnityFS`, is bundle format 6 (Unity 2017.1.0f3), and the CMS 2021 one is format 7 (Unity 2021.1.20f1).
+- The CMS 2021 `config.txt` has four sections and about a dozen keys that the CMS 2018 one lacks, and the CMS 2018 gauge keys no longer exist.
 
-## Why a plain "load" isn't enough
+## Tools
 
-Both games use Unity, but they are built with different Unity versions and the car data layout differs between them. A CMS 2018 car generally has to be converted (bundle rebuilt, car config rewritten), not just dropped into the CMS 2021 mods folder. The comparison report is meant to show exactly which parts differ.
+All commands run from the repository root. Only `inspect_bundle` needs `pip install -r requirements.txt` (UnityPy); the rest need just Python 3.9+.
 
-## Setup
+| Command | What it does |
+| --- | --- |
+| `python -m cms_tools.bundle_header FILE...` | Reads a `.cms` bundle header (signature, Unity version, sizes, compression). |
+| `python -m cms_tools.diff_configs A/config.txt B/config.txt` | Lists sections and keys present in one car's config but not the other. |
+| `python -m cms_tools.fix_signature CAR.cms [OUT.cms]` | **Experimental.** Writes a copy with `SnityFS` changed to `UnityFS`. Original is never modified. Untested in-game. |
+| `python -m cms_tools.inspect_bundle PATH -o report.json` | Lists a bundle's meshes, textures, GameObjects and script data using UnityPy. Not yet run against real bundles. |
+| `python -m cms_tools.compare_reports a.json b.json` | Compares two `inspect_bundle` reports. |
 
-```bash
-python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-## Usage
-
-Put your own copies of the files you want to study in a local `samples/` folder (it is git-ignored, so game and mod assets are never committed).
-
-```bash
-# 1. Inspect a CMS 2018 mod car and a CMS 2021 car
-python -m cms_tools.inspect_bundle samples/cms18_car -o reports/cms18.json
-python -m cms_tools.inspect_bundle samples/cms21_car -o reports/cms21.json
-
-# 2. See what differs
-python -m cms_tools.compare_reports reports/cms18.json reports/cms21.json
-```
+Put your own copies of the files you want to study in a local `samples/` folder. It is git-ignored, so game and mod assets are never committed.
 
 ## Roadmap
 
-1. Run the inspector on real CMS 2018 and CMS 2021 cars and record the differences in `docs/`.
-2. Work out how CMS 2021 discovers and registers custom cars.
-3. Write a converter for the pieces that differ (car config, naming, paths), starting with the simplest car.
-4. Test in-game and document the result.
+1. Test whether CMS 2021 loads a CMS 2018 car after the signature fix, with and without the config changes below.
+2. Run `inspect_bundle` on both bundles to compare what is inside them (needs UnityPy, which was not installable in the environment used so far).
+3. Write a config upgrader that adds the CMS 2021 sections and keys, using values confirmed in game.
+4. Work out how the CMS 2018 gauge keys map to the CMS 2021 `[dials]` section.
+5. Document the working procedure.
 
 ## Notes
 
