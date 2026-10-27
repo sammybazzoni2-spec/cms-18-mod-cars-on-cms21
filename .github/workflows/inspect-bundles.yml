@@ -1,0 +1,65 @@
+name: Inspect bundles
+
+# Runs the bundle inspector on GitHub, where UnityPy can be installed.
+# Any .cms files under samples/ are inspected. samples/ is git-ignored by default,
+# so with nothing there this just checks that the tools install and compile.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/inspect-bundles.yml"
+      - "cms_tools/**"
+      - "requirements.txt"
+      - "samples/**"
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Check UnityPy and compile tools
+        run: |
+          python -c "import UnityPy; print('UnityPy', UnityPy.__version__)"
+          python -m py_compile cms_tools/*.py
+          python -m cms_tools.inspect_bundle --help > /dev/null
+          echo "tools ok"
+
+      - name: Inspect .cms bundles under samples/
+        run: |
+          mkdir -p reports work
+          found=0
+          while IFS= read -r f; do
+            found=1
+            base=$(basename "$f" .cms)
+            echo "##### $f"
+            python -m cms_tools.bundle_header "$f"
+            if head -c 7 "$f" | grep -q SnityFS; then
+              python -m cms_tools.fix_signature "$f" "work/${base}.cms"
+              f="work/${base}.cms"
+              echo "(inspecting the signature-fixed copy)"
+            fi
+            python -m cms_tools.inspect_bundle "$f" -o "reports/${base}.json"
+          done < <(find samples -type f -name '*.cms' 2>/dev/null | sort)
+          if [ "$found" -eq 0 ]; then
+            echo "No .cms files under samples/; nothing to inspect."
+          fi
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reports
+          path: reports/
+          if-no-files-found: ignore
