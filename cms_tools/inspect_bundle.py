@@ -43,6 +43,10 @@ def _typetree_keys(obj) -> list[str] | None:
     return None
 
 
+def _shader_name(shader) -> str | None:
+    return _safe(lambda: shader.m_ParsedForm.m_Name) or _safe(lambda: shader.m_Name) or None
+
+
 def inspect_file(path: Path) -> dict[str, Any]:
     UnityPy = _load_unitypy()
     env = UnityPy.load(str(path))
@@ -57,6 +61,8 @@ def inspect_file(path: Path) -> dict[str, Any]:
     game_objects: list[str] = []
     behaviours: list[dict[str, Any]] = []
     text_assets: list[dict[str, Any]] = []
+    shaders: list[dict[str, Any]] = []
+    materials: list[dict[str, Any]] = []
     errors = 0
 
     for obj in env.objects:
@@ -84,6 +90,26 @@ def inspect_file(path: Path) -> dict[str, Any]:
                 )
             elif type_name == "GameObject":
                 game_objects.append(obj.read().m_Name)
+            elif type_name == "Shader":
+                data = obj.read()
+                shaders.append(
+                    {
+                        "name": _shader_name(data),
+                        "platforms": _safe(lambda: [int(p) for p in data.platforms]),
+                    }
+                )
+            elif type_name == "Material":
+                data = obj.read()
+                ref = getattr(data, "m_Shader", None)
+                shader = _safe(lambda: ref.read())
+                materials.append(
+                    {
+                        "name": data.m_Name,
+                        "shader": _shader_name(shader) if shader is not None else None,
+                        "shader_file_id": _safe(lambda: ref.file_id),
+                        "shader_path_id": _safe(lambda: ref.path_id),
+                    }
+                )
             elif type_name == "MonoBehaviour":
                 data = obj.read()
                 script = _safe(lambda: data.m_Script.read().m_Name)
@@ -118,6 +144,8 @@ def inspect_file(path: Path) -> dict[str, Any]:
         "game_objects": sorted(game_objects)[:MAX_LISTED],
         "behaviours": behaviours[:MAX_LISTED],
         "text_assets": text_assets[:MAX_LISTED],
+        "shaders": shaders[:MAX_LISTED],
+        "materials": sorted(materials, key=lambda m: m["name"] or "")[:MAX_LISTED],
         "read_errors": errors,
     }
 
