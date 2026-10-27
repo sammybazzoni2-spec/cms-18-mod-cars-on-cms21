@@ -51,7 +51,7 @@ Both bundles were opened with UnityPy on a GitHub runner (the CMS 2018 one using
 - Neither bundle contains scripts, so there is no code to port between Unity versions. The car's behaviour comes from the text files.
 - Both use the same texture format codes (10 and 12).
 - Both contain GameObjects named after every part in their `parts.txt`, plus `model`, `body`, `collider` and `details`.
-- **The shaders differ.** Every material in the CMS 2018 car uses Unity's built-in `Standard` shader (63 materials). Every material in the CMS 2021 car uses `HDRP/Lit` (66 materials), so CMS 2021 appears to use Unity's High Definition Render Pipeline. Unity's `Standard` shader is normally not supported by HDRP, where such materials usually show up pink. This has not been confirmed in CMS 2021.
+- **The shaders differ.** Every material in the CMS 2018 car uses Unity's built-in `Standard` shader (63 materials). Every material in the CMS 2021 car uses `HDRP/Lit` (66 materials), and the game's own `Player.log` confirms CMS 2021 renders with Unity's High Definition Render Pipeline. Unity's `Standard` shader is normally not supported by HDRP, where such materials usually show up pink. That has not been seen in CMS 2021 yet, because the car has not loaded (see test results).
 - The CMS 2018 car has a gauge needle object (`wskazowka`) and a `GAUGE_NEEDLE` material. The CMS 2021 car has `speed` and `tach` objects, alongside its `[dials]` config section. How these relate is not yet verified.
 
 ## Verified: `config.txt`
@@ -75,10 +75,19 @@ Other differences noticed while reading both files:
 - `allowedPlaces` entries in the CMS 2021 car can carry a number (`Order.16`); the CMS 2018 car uses plain names.
 - `frontWheelMaxSize` is `5` in the CMS 2018 car and `0.385` in the CMS 2021 car. This could be a change of units or just a difference between the two cars; with one car each, it cannot be told apart.
 
+## Test results
+
+**Game engine (from `Player.log`):** CMS 2021 reports Unity 2020.3.49f1 and Direct3D 11, and its log shows `HDRenderPipeline` calls. The CMS 2021 sample car's bundle was built with Unity 2021.1.20f1, which is newer than the game's own engine, so the editor version used for CMS 2021 mods is not the same as the game's runtime version.
+
+**Test 1 — CMS 2018 Holden, only the bundle signature fixed (`SnityFS` to `UnityFS`), config files unchanged:**
+the game froze before reaching the title screen. The last lines of `Player.log` were `[GameDataManager] -> Load()` and `[MenuPressButton] -> LoadData() Waiting for CarBundleLoader. Start: 00:00:03`, and the log ends there. It contains no error or exception lines at all, and it never names the mod, so the log does not say which car or file caused the stall. It does show the game was waiting on the car bundle loader and never got past it. This points at car bundle loading but does not prove the Holden bundle is the cause.
+
 ## Not yet known
 
-- Whether CMS 2021 loads a CMS 2018 car at all, with or without the signature change. Nothing here has been run in the game.
-- Whether the `Standard`-shader materials really show up pink in CMS 2021, as expected for HDRP.
+- Whether CMS 2021 can load a CMS 2018 car at all. Test 1 froze at startup, so the first thing to find out is why.
+- Whether the freeze depends on the signature fix. Testing the original, unfixed Holden mod would show this.
+- Whether the freeze comes from the bundle or from `config.txt`.
+- Whether the `Standard`-shader materials show up pink in CMS 2021, as expected for HDRP. This cannot be seen until a car loads.
 - How to convert the materials. The likely route is re-creating them as `HDRP/Lit` in a Unity 2021.1.20f1 HDRP project and rebuilding the bundle. That needs the Unity editor; the Python tools here cannot do it.
 - How the CMS 2018 gauge keys and `wskazowka` needle map onto the CMS 2021 `[dials]` values and `speed` / `tach` objects.
 - Which of the new CMS 2021 keys are required and which have safe defaults.
