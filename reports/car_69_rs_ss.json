@@ -1,0 +1,489 @@
+{
+  "source": "samples/cms21/car_69_rs_ss.cms",
+  "files": [
+    {
+      "file": "car_69_rs_ss.cms",
+      "unity_versions": [
+        "2021.1.20f1"
+      ],
+      "object_type_counts": {
+        "Material": 66,
+        "Transform": 44,
+        "GameObject": 44,
+        "MeshCollider": 43,
+        "MeshFilter": 43,
+        "MeshRenderer": 43,
+        "Mesh": 43,
+        "Texture2D": 33,
+        "Shader": 1,
+        "AssetBundle": 1
+      },
+      "meshes": [
+        {
+          "name": "acbox",
+          "vertex_count": null,
+          "submeshes": 8
+        },
+        {
+          "name": "battiercabl",
+          "vertex_count": null,
+          "submeshes": 6
+        },
+        {
+          "name": "body",
+          "vertex_count": null,
+          "submeshes": 12
+        },
+        {
+          "name": "bumper_front",
+          "vertex_count": null,
+          "submeshes": 1
+        },
+        {
+          "name": "bumper_rear",
+          "vertex_count": null,
+          "submeshes": 2
+        },
+        {
+          "name": "carpet",
+          "vertex_count": null,
+          "submeshes": 2
+        },
+        {
+          "name": "climitcontros",
+          "vertex_count": null,
+          "submeshes": 1
+        },
+        {
+          "name": "clock",
+          "vertex_count": null,
+          "submeshes": 3
+        },
+        {
+          "name": "collider",
+          "vertex_count": null,
+          "submeshes": 1
+        },
+        {
+          "name": "console_gaugess",
+          "vertex_count": null,
+          "submeshes": 2
+        },
+        {
+          "name": "dash",
+          "vertex_count": null,
+          "submeshes": 2
+        },
+        {
+          "name": "details",
+          "vertex_count": null,
+          "submeshes": 12
+        },
+        {
+          "name": "domelight",
+          "vertex_count": null,
+          "submeshes": 1
+        },
+        {
+          "name": "door_front_left",
+          "vertex_count": null,
+          "submeshes": 6
+        },
+        {
+          "name": "door_front_right",
+          "vertex_count": null,
+          "submeshes": 6
+        },
+        {
+          "name": "fender_front_left",
+          "vertex_count": null,
+          "submeshes": 6
+        },
+        {
+          "name": "fender_front_right",
+          "vertex_count": null,
+          "submeshes": 5
+        },
+        {
+          "name": "front_end",
+          "vertex_count": null,
+          "submeshes": 4
+        },
+        {
+          "name": "gauge_housing",
+          "vertex_count": null,
+          "submeshes": 3
+        },
+        {
+          "name": "grill",
+          "vertex_count": null,
+          "submeshes": 3
+        },
+        {
+          "name": "headlight_left",
+          "vertex_count": null,
+          "submeshes": 6
+        },
+        {
+          "name": "headlight_right",
+          "vertex_count": null,
+          "submeshes": 6
+        },
+        {
+          "name": "heat_ac_controls",
+          "vertex_count": null,
+          "submeshes": 1
+        },
+        {
+          "name": "hood",
+          "vertex_count": null,
+          "submeshes": 3
+        },
+        {
+          "name": "hoodhenge",
+          "vertex_count": null,
+          "submeshes": 1
+        },
+        {
+          "name": "mirror_left",
+          "vertex_count": null,
+          "submeshes": 3
+        },
+        {
+          "name": "mirror_right",
+          "vertex_count": null,
+          "submeshes": 3
+        },
+        {
+          "name": "petals",
+          "vertex_count": null,
+          "submeshes": 2
+        },
+        {
+          "name": "radio_face",
+          "vertex_count": null,
+          "submeshes": 1
+        },
+        {
+          "name": "rockers.001",
+          "vertex_count": null,
+          "submeshes": 1
+        },
+        {
+          "name": "sepcbottom.003",
+          "vertex_count": null,
+          "submeshes": 3
+        },
+        {
+          "name": "speed",
+          "vertex_count": null,
+          "submeshes": 2
+        },
+        {
+          "name": "tach",
+          "vertex_count": null,
+          "submeshes": 2
+        },
+        {
+          "name": "taillight_left",
+          "vertex_count": null,
+          "submeshes": 4
+        },
+        {
+          "name": "taillight_right",
+          "vertex_count": null,
+          "submeshes": 4
+        },
+        {
+          "name": "trunk",
+          "vertex_count": null,
+          "submeshes": 1
+        },
+        {
+          "name": "window_back",
+          "vertex_count": null,
+          "submeshes": 1
+        },
+        {
+          "name": "window_body_left_1",
+          "vertex_count": null,
+          "submeshes": 1
+        },
+        {
+          "name": "window_body_right_1",
+          "vertex_count": null,
+          "submeshes": 1
+        },
+        {
+          "name": "window_door_front_left",
+          "vertex_count": null,
+          "submeshes": 1
+        },
+        {
+          "name": "window_door_front_right",
+          "vertex_count": null,
+          "submeshes": 1
+        },
+        {
+          "name": "window_front",
+          "vertex_count": null,
+          "submeshes": 1
+        },
+        {
+          "name": "wipperrelay.001",
+          "vertex_count": null,
+          "submeshes": 9
+        }
+      ],
+      "textures": [
+        {
+          "name": "brakehandel",
+          "width": 1024,
+          "height": 1024,
+          "format": "12"
+        },
+        {
+          "name": "brakehandel",
+          "width": 1024,
+          "height": 1024,
+          "format": "12"
+        },
+        {
+          "name": "clock",
+          "width": 1024,
+          "height": 1024,
+          "format": "10"
+        },
+        {
+          "name": "clock2",
+          "width": 256,
+          "height": 256,
+          "format": "10"
+        },
+        {
+          "name": "console_gauges",
+          "width": 1024,
+          "height": 1024,
+          "format": "12"
+        },
+        {
+          "name": "dark_gray",
+          "width": 1024,
+          "height": 1024,
+          "format": "10"
+        },
+        {
+          "name": "dashpad",
+          "width": 1024,
+          "height": 1024,
+          "format": "12"
+        },
+        {
+          "name": "dashpad",
+          "width": 1024,
+          "height": 1024,
+          "format": "12"
+        },
+        {
+          "name": "dashwood",
+          "width": 1024,
+          "height": 1024,
+          "format": "10"
+        },
+        {
+          "name": "dashwood",
+          "width": 256,
+          "height": 1024,
+          "format": "12"
+        },
+        {
+          "name": "domelight",
+          "width": 1024,
+          "height": 1024,
+          "format": "10"
+        },
+        {
+          "name": "fuel",
+          "width": 1024,
+          "height": 1024,
+          "format": "12"
+        },
+        {
+          "name": "fuel",
+          "width": 1024,
+          "height": 1024,
+          "format": "10"
+        },
+        {
+          "name": "graycarpet",
+          "width": 1024,
+          "height": 1024,
+          "format": "10"
+        },
+        {
+          "name": "greencarpet",
+          "width": 1024,
+          "height": 1024,
+          "format": "12"
+        },
+        {
+          "name": "interior",
+          "width": 512,
+          "height": 512,
+          "format": "12"
+        },
+        {
+          "name": "needleds1",
+          "width": 1024,
+          "height": 1024,
+          "format": "10"
+        },
+        {
+          "name": "oil",
+          "width": 1024,
+          "height": 1024,
+          "format": "10"
+        },
+        {
+          "name": "oil",
+          "width": 1024,
+          "height": 1024,
+          "format": "12"
+        },
+        {
+          "name": "orgn_02",
+          "width": 1024,
+          "height": 1024,
+          "format": "10"
+        },
+        {
+          "name": "radio_face",
+          "width": 256,
+          "height": 32,
+          "format": "10"
+        },
+        {
+          "name": "shiftertop",
+          "width": 1024,
+          "height": 1024,
+          "format": "12"
+        },
+        {
+          "name": "shiftertop",
+          "width": 1024,
+          "height": 1024,
+          "format": "12"
+        },
+        {
+          "name": "shifttopplate",
+          "width": 1024,
+          "height": 1024,
+          "format": "10"
+        },
+        {
+          "name": "shifttopplate",
+          "width": 1024,
+          "height": 1024,
+          "format": "12"
+        },
+        {
+          "name": "speedod2",
+          "width": 1024,
+          "height": 1024,
+          "format": "12"
+        },
+        {
+          "name": "tach2",
+          "width": 1024,
+          "height": 1024,
+          "format": "12"
+        },
+        {
+          "name": "temp",
+          "width": 1024,
+          "height": 1024,
+          "format": "10"
+        },
+        {
+          "name": "temp",
+          "width": 1024,
+          "height": 1024,
+          "format": "12"
+        },
+        {
+          "name": "volts",
+          "width": 1024,
+          "height": 1024,
+          "format": "12"
+        },
+        {
+          "name": "volts",
+          "width": 1024,
+          "height": 1024,
+          "format": "10"
+        },
+        {
+          "name": "white01",
+          "width": 1024,
+          "height": 1024,
+          "format": "10"
+        },
+        {
+          "name": "wood",
+          "width": 128,
+          "height": 64,
+          "format": "10"
+        }
+      ],
+      "game_objects": [
+        "acbox",
+        "battiercabl",
+        "body",
+        "bumper_front",
+        "bumper_rear",
+        "carpet",
+        "climitcontros",
+        "clock",
+        "collider",
+        "console_gaugess",
+        "dash",
+        "details",
+        "domelight",
+        "door_front_left",
+        "door_front_right",
+        "fender_front_left",
+        "fender_front_right",
+        "front_end",
+        "gauge_housing",
+        "grill",
+        "headlight_left",
+        "headlight_right",
+        "heat_ac_controls",
+        "hood",
+        "hoodhenge",
+        "mirror_left",
+        "mirror_right",
+        "model",
+        "petals",
+        "radio_face",
+        "rockers.001",
+        "sepcbottom.003",
+        "speed",
+        "tach",
+        "taillight_left",
+        "taillight_right",
+        "trunk",
+        "window_back",
+        "window_body_left_1",
+        "window_body_right_1",
+        "window_door_front_left",
+        "window_door_front_right",
+        "window_front",
+        "wipperrelay.001"
+      ],
+      "behaviours": [],
+      "text_assets": [],
+      "read_errors": 0
+    }
+  ]
+}

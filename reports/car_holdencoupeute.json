@@ -1,0 +1,317 @@
+{
+  "source": "work/car_holdencoupeute.cms",
+  "files": [
+    {
+      "file": "car_holdencoupeute.cms",
+      "unity_versions": [
+        "2017.1.0f3"
+      ],
+      "object_type_counts": {
+        "Material": 63,
+        "Texture2D": 24,
+        "Transform": 24,
+        "GameObject": 24,
+        "MeshCollider": 23,
+        "Mesh": 23,
+        "MeshFilter": 23,
+        "MeshRenderer": 23,
+        "Animator": 1,
+        "AssetBundle": 1,
+        "Shader": 1,
+        "Avatar": 1
+      },
+      "meshes": [
+        {
+          "name": "body",
+          "vertex_count": null,
+          "submeshes": 12
+        },
+        {
+          "name": "bumper_front",
+          "vertex_count": null,
+          "submeshes": 3
+        },
+        {
+          "name": "collider",
+          "vertex_count": null,
+          "submeshes": 1
+        },
+        {
+          "name": "details",
+          "vertex_count": null,
+          "submeshes": 81
+        },
+        {
+          "name": "door_front_left",
+          "vertex_count": null,
+          "submeshes": 17
+        },
+        {
+          "name": "door_front_right",
+          "vertex_count": null,
+          "submeshes": 16
+        },
+        {
+          "name": "door_rear_left",
+          "vertex_count": null,
+          "submeshes": 5
+        },
+        {
+          "name": "fender_front_left",
+          "vertex_count": null,
+          "submeshes": 16
+        },
+        {
+          "name": "fender_front_right",
+          "vertex_count": null,
+          "submeshes": 16
+        },
+        {
+          "name": "fender_rear_right",
+          "vertex_count": null,
+          "submeshes": 5
+        },
+        {
+          "name": "front_end",
+          "vertex_count": null,
+          "submeshes": 5
+        },
+        {
+          "name": "headlight_left",
+          "vertex_count": null,
+          "submeshes": 6
+        },
+        {
+          "name": "headlight_right",
+          "vertex_count": null,
+          "submeshes": 6
+        },
+        {
+          "name": "hood",
+          "vertex_count": null,
+          "submeshes": 8
+        },
+        {
+          "name": "mirror_right",
+          "vertex_count": null,
+          "submeshes": 3
+        },
+        {
+          "name": "taillight_left",
+          "vertex_count": null,
+          "submeshes": 6
+        },
+        {
+          "name": "taillight_right",
+          "vertex_count": null,
+          "submeshes": 6
+        },
+        {
+          "name": "trunk",
+          "vertex_count": null,
+          "submeshes": 7
+        },
+        {
+          "name": "window_back",
+          "vertex_count": null,
+          "submeshes": 1
+        },
+        {
+          "name": "window_door_front_left",
+          "vertex_count": null,
+          "submeshes": 1
+        },
+        {
+          "name": "window_door_front_right",
+          "vertex_count": null,
+          "submeshes": 1
+        },
+        {
+          "name": "window_front",
+          "vertex_count": null,
+          "submeshes": 1
+        },
+        {
+          "name": "wskazowka",
+          "vertex_count": null,
+          "submeshes": 2
+        }
+      ],
+      "textures": [
+        {
+          "name": "Brushed_aluminium_interior_1_color",
+          "width": 2048,
+          "height": 2048,
+          "format": "10"
+        },
+        {
+          "name": "Chrome_AlloyPM",
+          "width": 2048,
+          "height": 2048,
+          "format": "12"
+        },
+        {
+          "name": "Chrome_color",
+          "width": 2048,
+          "height": 2048,
+          "format": "10"
+        },
+        {
+          "name": "anodized_MetallicSmoothness",
+          "width": 128,
+          "height": 128,
+          "format": "12"
+        },
+        {
+          "name": "blank_normal",
+          "width": 8,
+          "height": 8,
+          "format": "12"
+        },
+        {
+          "name": "brushedaluminium_MetallicSmoothness",
+          "width": 128,
+          "height": 128,
+          "format": "12"
+        },
+        {
+          "name": "hol_50-2106fx_51_gauges_diff_6c2cad3c-5ed0-42d9-a18c-062a418e971a",
+          "width": 1024,
+          "height": 1024,
+          "format": "12"
+        },
+        {
+          "name": "hol_50-2106fx_51_symbols_diff_71d37c03-20b0-4396-9133-75dbde2d8616",
+          "width": 256,
+          "height": 256,
+          "format": "12"
+        },
+        {
+          "name": "hol_50-2106fx_51_symbols_embossed_nrml_43605294-8073-4037-947a-9b20693a8da1",
+          "width": 512,
+          "height": 256,
+          "format": "12"
+        },
+        {
+          "name": "hol_50-2106fx_51_symbols_embossed_opac_e9378496-5dab-4c61-b4ef-f846af2e1fd5",
+          "width": 512,
+          "height": 256,
+          "format": "12"
+        },
+        {
+          "name": "hol_badge_013_AlbedoTransparency",
+          "width": 512,
+          "height": 512,
+          "format": "12"
+        },
+        {
+          "name": "hol_badge_013_AlbedoTransparency 1",
+          "width": 512,
+          "height": 512,
+          "format": "12"
+        },
+        {
+          "name": "hol_badge_013_MetallicSmoothness",
+          "width": 512,
+          "height": 512,
+          "format": "12"
+        },
+        {
+          "name": "hol_badge_013_Normal",
+          "width": 512,
+          "height": 512,
+          "format": "12"
+        },
+        {
+          "name": "key_hole_005_nrml_72784cdc-5f02-47ef-908e-1b970a8f257b",
+          "width": 256,
+          "height": 256,
+          "format": "12"
+        },
+        {
+          "name": "knerling",
+          "width": 1024,
+          "height": 1024,
+          "format": "12"
+        },
+        {
+          "name": "painted_metal_MetallicSmoothness",
+          "width": 128,
+          "height": 128,
+          "format": "12"
+        },
+        {
+          "name": "plastic_MetallicSmoothness",
+          "width": 128,
+          "height": 128,
+          "format": "12"
+        },
+        {
+          "name": "rivet_012_lcao_da3d936e-34a5-4195-a080-f9f6f757e722",
+          "width": 128,
+          "height": 128,
+          "format": "12"
+        },
+        {
+          "name": "rivet_012_nrml_9637f1cb-5670-4753-adcf-124f05895e05",
+          "width": 128,
+          "height": 128,
+          "format": "12"
+        },
+        {
+          "name": "screw_036_nrml_3b64e547-7705-4bf3-8be7-3596f8020049",
+          "width": 256,
+          "height": 256,
+          "format": "12"
+        },
+        {
+          "name": "screw_036_opac_b97c06d0-c53f-4cde-88ce-5c42fa272395",
+          "width": 256,
+          "height": 256,
+          "format": "12"
+        },
+        {
+          "name": "stitch_003_gap_nrml_a59dde47-5e44-4bde-9f73-0330cb802498",
+          "width": 128,
+          "height": 128,
+          "format": "12"
+        },
+        {
+          "name": "stitch_003_gap_opac_5aa892a1-1f3e-446e-a1e9-bbb2d13d3b65",
+          "width": 128,
+          "height": 128,
+          "format": "12"
+        }
+      ],
+      "game_objects": [
+        "body",
+        "bumper_front",
+        "collider",
+        "details",
+        "door_front_left",
+        "door_front_right",
+        "door_rear_left",
+        "fender_front_left",
+        "fender_front_right",
+        "fender_rear_right",
+        "front_end",
+        "headlight_left",
+        "headlight_right",
+        "hood",
+        "mirror_right",
+        "model",
+        "taillight_left",
+        "taillight_right",
+        "trunk",
+        "window_back",
+        "window_door_front_left",
+        "window_door_front_right",
+        "window_front",
+        "wskazowka"
+      ],
+      "behaviours": [],
+      "text_assets": [],
+      "read_errors": 0
+    }
+  ]
+}
