@@ -27,10 +27,17 @@ def _merge(report: dict[str, Any]) -> dict[str, Any]:
         "meshes": set(),
         "textures": set(),
         "scripts": {},
+        "shaders": {},
+        "material_shaders": {},
     }
     for f in report.get("files", []):
         if "error" in f:
             continue
+        for s in f.get("shaders", []):
+            merged["shaders"][s.get("name") or "<unnamed>"] = s.get("platforms")
+        for m in f.get("materials", []):
+            key = m.get("shader") or ("<outside this bundle>" if m.get("shader_file_id") else "<unresolved>")
+            merged["material_shaders"][key] = merged["material_shaders"].get(key, 0) + 1
         merged["versions"].update(f.get("unity_versions", []))
         for k, v in f.get("object_type_counts", {}).items():
             merged["types"][k] = merged["types"].get(k, 0) + v
@@ -73,6 +80,15 @@ def compare(a: dict[str, Any], b: dict[str, Any], label_a: str, label_b: str) ->
         out.append(f"  only in {label_a}: {s}")
     for s in sorted(set(B["scripts"]) - set(A["scripts"])):
         out.append(f"  only in {label_b}: {s}")
+
+    out.append("\nShaders stored in the bundle (name: compiler platform ids)")
+    for label, side in ((label_a, A), (label_b, B)):
+        listed = ", ".join(f"{n}: {p}" for n, p in sorted(side["shaders"].items())) or "(none recorded)"
+        out.append(f"  {label}: {listed}")
+    out.append("\nMaterials by shader (shader -> number of materials)")
+    for label, side in ((label_a, A), (label_b, B)):
+        listed = ", ".join(f"{n} x{c}" for n, c in sorted(side["material_shaders"].items())) or "(none recorded)"
+        out.append(f"  {label}: {listed}")
 
     out.append("\nMesh and texture names")
     out.append(f"  meshes only in {label_a}: {len(A['meshes'] - B['meshes'])}")
