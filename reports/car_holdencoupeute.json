@@ -311,6 +311,395 @@
       ],
       "behaviours": [],
       "text_assets": [],
+      "shaders": [
+        {
+          "name": "Standard",
+          "platforms": [
+            1,
+            4
+          ]
+        }
+      ],
+      "materials": [
+        {
+          "name": "CARPET_004__838383FF",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "GAUGE_NEEDLE",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "GAUGE_NEEDLE__FFFFFFFF",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "GLS_LIGHTBULB__FFFFFFFF",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "INT_GAUGES",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "INT_SYMBOLS",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "KEYHOLE_001__FFFFFFFF",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "KEYHOLE_005",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "METAL_ANODIZED_ALLOPTIONS__846B46FF",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "METAL_BRUSHED_BLACK",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "METAL_BRUSHED_BLACK__000000FF",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "METAL_BRUSHED_BLACK__040404FF",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "METAL_BRUSHED_BLACK__664D20FF",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "METAL_TEXTURED_CUSTOM__0B0B0BFF",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "METAL_TEXTURED_CUSTOM__1A66DEFF",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "Material",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "PAINTED_METAL_BLACK",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "PAINTED_METAL_CH1__010202FF",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "PAINTED_METAL_CH1__930000FF",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "PAINTED_METAL_SMOOTH__930000FF",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "PAINTED_SCREWS_000000FF",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "PLASTIC_EMBOSSED_ALPHA__010101FF",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "PLASTIC_EMBOSSED_ALPHA__939393FF",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "RIVETPAINTED_001",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "RIVET_001__FFFFFFFF",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "RIVET_003__FFFFFFFF",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "RIVET_004",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "SCREW",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "SCREWPAINTED_002__010101FF",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "SCREW_001",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "SCREW_002",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "SCREW_024__010101FF",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "SCREW_025__FFFFFFFF",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "STITCH_003",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "black_hole",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "body_chrome",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "body_glass",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "body_glass_orange_6",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "body_glass_red_6",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "body_glass_white_5",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "body_glass_white_6",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "body_gum",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "body_light_glass_old3",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "body_lights",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "body_mat",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "body_mirror",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "body_paint",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "body_plastic",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "body_steel",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "hol_badge_013_AlbedoTransparency",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "int_brushedaluminium",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "int_chrome",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "int_fabric2_carfloor",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "int_glass",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "int_plastic",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "int_plastic_piano",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "int_red",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "int_steel",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "int_wood5",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "knerling",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "leather1",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "leather1vent",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        },
+        {
+          "name": "underbody2",
+          "shader": "Standard",
+          "shader_file_id": 0,
+          "shader_path_id": 952725256833404699
+        }
+      ],
       "read_errors": 0
     }
   ]

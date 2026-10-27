@@ -483,6 +483,412 @@
       ],
       "behaviours": [],
       "text_assets": [],
+      "shaders": [
+        {
+          "name": "HDRP/Lit",
+          "platforms": [
+            4
+          ]
+        }
+      ],
+      "materials": [
+        {
+          "name": "DefaultHDMaterial",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "back_003",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "black002",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "black_03",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "body_brushedaluminium",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "body_chrome",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "body_glass",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "body_glass_orange_5",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "body_glass_red_2",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "body_glass_red_5",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "body_glass_white_4",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "body_glass_white_5",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "body_gum",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "body_gum.001",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "body_light_glass_clear",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "body_light_glass_old5",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "body_mirror",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "body_paint",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "body_silvermat_black",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "body_steel",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "body_steel.001",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "body_steel_black",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "brakehandel",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "clock2",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "dark_gray",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "dashpad",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "dashwood",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "domelight",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "fuel",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "gray_carpet",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "graycarpet",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "greencarpet",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "grencarpet",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "heat_ac_controls",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "int_brushedaluminium",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "int_chrome",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "int_fabric1",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "int_fabric1_alcantara",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "int_glass",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "int_pedals",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "int_plastic10",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "int_plastic2",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "int_plastic32",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "int_plastic4",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "int_plastic_piano",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "int_plastic_white",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "int_red",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "int_steel",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "leather1",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "leather23",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "leather3",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "mid_gray",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "needleds1",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "oil",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "orgn_02",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "parmss_black01",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "pedals",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "radio_face",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "shiftertop",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "shifttopplate",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "speedod2",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "tach2",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "temp",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "underbody3",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "volts",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        },
+        {
+          "name": "white01",
+          "shader": "HDRP/Lit",
+          "shader_file_id": 0,
+          "shader_path_id": -9131526356163373820
+        }
+      ],
       "read_errors": 0
     }
   ]
