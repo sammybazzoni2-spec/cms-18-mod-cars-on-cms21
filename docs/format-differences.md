@@ -1,11 +1,12 @@
 # CMS 2018 vs CMS 2021 car mods: observed differences
 
-This compares exactly two cars, so treat it as a starting point rather than a complete specification.
+This compares three cars, so treat it as a starting point rather than a complete specification.
 
 - **CMS 2018:** 1951 Holden FX Coupe Utility (Workshop item folder `1203793941`)
-- **CMS 2021:** 1969 Camaro RS SS (Workshop item `2689830628`)
+- **CMS 2021, Workshop mod:** 1969 Camaro RS SS (Workshop item `2689830628`)
+- **CMS 2021, stock game car:** Sixon Cebulion (`car_sixoncebulion.cms`). Only its text config files and the output of local tools are used here; no game files are stored in this repo.
 
-Everything under "Verified" was read directly from those files with the tools in this repo. Everything under "Not yet known" is open.
+Where a table says "CMS 2021 car" without further detail, it means the Camaro. Everything under "Verified" was read directly from those files with the tools in this repo. Everything under "Not yet known" is open.
 
 ## Folder layout
 
@@ -24,15 +25,17 @@ The CMS 2021 sample also ships `Materials/`, `Textures/` and `RustMaps/` folders
 
 ## Verified: the `.cms` bundle
 
-| | CMS 2018 car | CMS 2021 car |
-| --- | --- | --- |
-| Signature | `SnityFS` | `UnityFS` |
-| Bundle format version | 6 | 7 |
-| Unity version | 2017.1.0f3 | 2021.1.20f1 |
-| Compression | LZ4HC | LZ4HC |
-| Recorded size equals file size | yes | yes |
+| | CMS 2018 Holden | CMS 2021 Camaro (Workshop) | CMS 2021 Cebulion (stock) |
+| --- | --- | --- | --- |
+| Signature | `SnityFS` | `UnityFS` | `UnityFS` |
+| Bundle format version | 6 | 7 | 8 |
+| Unity version | 2017.1.0f3 | 2021.1.20f1 | 2020.3.41f1 |
+| Compression | LZ4HC | LZ4HC | LZ4HC |
+| Recorded size equals file size | yes | yes | yes |
 
 The CMS 2018 bundle's header parses cleanly apart from the first letter of the signature, which suggests the change is deliberate rather than corruption. A standard `UnityFS` signature is what tools such as UnityPy expect.
+
+The game's own engine is 2020.3.49f1 (see test results). The stock car was built with 2020.3.41f1, the closest match. The Workshop Camaro was built with a newer editor (2021.1.20f1) than the game runs on, so a different editor version does not by itself rule a bundle out, though whether the Camaro loads has not been tested here.
 
 ## Verified: what is inside the bundles
 
@@ -52,15 +55,17 @@ Both bundles were opened with UnityPy on a GitHub runner (the CMS 2018 one using
 - Both use the same texture format codes (10 and 12).
 - Both contain GameObjects named after every part in their `parts.txt`, plus `model`, `body`, `collider` and `details`.
 - **The shaders differ.** Every material in the CMS 2018 car uses Unity's built-in `Standard` shader (63 materials). Every material in the CMS 2021 car uses `HDRP/Lit` (66 materials), and the game's own `Player.log` confirms CMS 2021 renders with Unity's High Definition Render Pipeline. Unity's `Standard` shader is normally not supported by HDRP, where such materials usually show up pink. That has not been seen in CMS 2021 yet, because the car has not loaded (see test results).
+- A local text scan of the decompressed bundles (`cms_tools/bundle_peek.py`, checked against the UnityPy results above) finds `Standard` in the Holden bundle and `HDRP/Lit` in both the Camaro and the stock Cebulion bundle. So both CMS 2021 cars, including the game's own, ship the `HDRP/Lit` shader. The scan also finds a stray `Standard` string in both CMS 2021 bundles, which UnityPy did not report as a shader for the Camaro, so it is probably unrelated text. Treat the scan's counts as rough.
+- All three bundles have the same shape: one serialized data file plus one `.resS` file holding bulk data such as textures.
 - The CMS 2018 car has a gauge needle object (`wskazowka`) and a `GAUGE_NEEDLE` material. The CMS 2021 car has `speed` and `tach` objects, alongside its `[dials]` config section. How these relate is not yet verified.
 
 ## Verified: `config.txt`
 
-Output of `python -m cms_tools.diff_configs` with A = CMS 2018 and B = CMS 2021. Values are not compared, only which sections and keys exist.
+Output of `python -m cms_tools.diff_configs`. Values are not compared, only which sections and keys exist.
 
-**Sections only in CMS 2021:** `10_bonusParts`, `carLight#` (numbered, `carLight0`, `carLight1`), `carLightBasic`, `dials`.
+**Holden (CMS 2018) against Camaro (CMS 2021 Workshop).** Sections only in the Camaro: `10_bonusParts`, `carLight#` (numbered, `carLight0`, `carLight1`), `carLightBasic`, `dials`.
 
-| Section | Only in CMS 2018 | Only in CMS 2021 |
+| Section | Only in Holden | Only in Camaro |
 | --- | --- | --- |
 | `[0_main]` | | `carBrand`, `scale` |
 | `[1_other]` | `finalDriveRatio`, `rpmAngle`, `rpmFactor`, `speedoAngle`, `speedoFactor` | `allowedColors`, `brakeMod`, `engineTorqueMod`, `engineWeight`, `gearsFinalRatioMod`, `liveries`, `thumbnailColor` |
@@ -68,12 +73,18 @@ Output of `python -m cms_tools.diff_configs` with A = CMS 2018 and B = CMS 2021.
 | `[6_engine]` | | `swapoptions` |
 | `[8_logic]` | | `carValue` |
 
-The new `[dials]` section in CMS 2021 holds the gauge settings (`dialname`, `rpm_max`, `rpm_max_angle`, `speed_max_kph`, `speed_max_angle`, and others). The CMS 2018 gauge keys in `[1_other]` (`rpmAngle`, `rpmFactor`, `speedoAngle`, `speedoFactor`) have no direct counterpart.
+The new `[dials]` section holds the gauge settings (`dialname`, `rpm_max`, `rpm_max_angle`, `speed_max_kph`, `speed_max_angle`, and others). The Holden's gauge keys in `[1_other]` (`rpmAngle`, `rpmFactor`, `speedoAngle`, `speedoFactor`) have no direct counterpart.
 
-Other differences noticed while reading both files:
+**Correction:** an earlier version of these notes treated `finalDriveRatio` as a CMS 2018-only key, because the Camaro lacks it. The stock Cebulion config has `finalDriveRatio=4`, so it still exists in CMS 2021 and is simply optional.
 
-- `allowedPlaces` entries in the CMS 2021 car can carry a number (`Order.16`); the CMS 2018 car uses plain names.
-- `frontWheelMaxSize` is `5` in the CMS 2018 car and `0.385` in the CMS 2021 car. This could be a change of units or just a difference between the two cars; with one car each, it cannot be told apart.
+**Stock Cebulion against Camaro.** The stock car has some things the Workshop Camaro lacks: a `[dragstrip]` section of performance data, `bonusPart#` sections, `engineRpmMod` and `finalDriveRatio` in `[1_other]`, `scale` in `[2_suspension]`, and `sound` in `[6_engine]`. The Camaro has `liveries`, which the stock car lacks. Both CMS 2021 configs share the extra sections and keys listed above (`dials`, `carLight#`, and so on), and neither contains the Holden's old gauge keys. Because the Camaro is a published mod that works without the keys the stock car adds, those keys look optional, but nothing has been tested.
+
+Other differences noticed while reading the files:
+
+- `allowedPlaces` differs in both format and names: Holden `Shed,Junkyard,Auction,Salon`, Camaro `Order.16,Shed,Junkyard,Auction`, stock `Order.5,Junkyard,Auction,Barn`. Entries can carry a number (`Order.5`), and names vary (`Shed`, `Barn`, `Salon`). Which names CMS 2021 accepts is not verified.
+- `frontWheelMaxSize` is `5` in the Holden and `0.385` / `0.375` in the two CMS 2021 cars. That suggests a change of units rather than a car-specific value, but three cars is not conclusive.
+- The Holden config names CMS 2018 part IDs (`engine_i6_old`, `rim_willys`, `seat_atlanta`, `steering_wheel_cape`, `tire_vintage_wall2`). The CMS 2021 configs use other IDs (for example `rim_36`, `seat_7_leather4`, `steering_wheel1`).
+- The stock car's `bodyconfig.txt` has a `[tuning]` section mapping parts to variants (such as `hood=hood2`) and a per-variant license plate position section. The Holden's does not.
 
 ## Test results
 
@@ -90,7 +101,8 @@ the game froze before reaching the title screen. The last lines of `Player.log` 
 - Whether the `Standard`-shader materials show up pink in CMS 2021, as expected for HDRP. This cannot be seen until a car loads.
 - How to convert the materials. The likely route is re-creating them as `HDRP/Lit` in a Unity 2021.1.20f1 HDRP project and rebuilding the bundle. That needs the Unity editor; the Python tools here cannot do it.
 - How the CMS 2018 gauge keys and `wskazowka` needle map onto the CMS 2021 `[dials]` values and `speed` / `tach` objects.
-- Which of the new CMS 2021 keys are required and which have safe defaults.
+- Which of the new CMS 2021 keys are required. The Camaro, a known-shape CMS 2021 config, is the best model for a minimum set, but nothing has been tested.
+- Whether CMS 2021 still has the CMS 2018 part IDs that the Holden config names (`engine_i6_old`, `rim_willys`, `seat_atlanta`, `steering_wheel_cape`, `tire_vintage_wall2`, and the exhaust, downpipe and radiator parts). A missing ID could cause problems of its own.
 - Whether `bodyconfig.txt` and `parts.txt` need changes. The files looked structurally similar in these two cars, but that was not checked in detail.
 
 ## Suggested first experiment

@@ -19,6 +19,7 @@ All commands run from the repository root. Only `inspect_bundle` needs `pip inst
 | Command | What it does |
 | --- | --- |
 | `python -m cms_tools.bundle_header FILE...` | Reads a `.cms` bundle header (signature, Unity version, sizes, compression). |
+| `python -m cms_tools.bundle_peek FILE...` | Decompresses a bundle locally and lists the files inside, the Unity version and shader names. Standard library only, and nothing is uploaded, so it suits game files you should not publish. |
 | `python -m cms_tools.diff_configs A/config.txt B/config.txt` | Lists sections and keys present in one car's config but not the other. |
 | `python -m cms_tools.fix_signature CAR.cms [OUT.cms]` | **Experimental.** Writes a copy with `SnityFS` changed to `UnityFS`. Original is never modified. Untested in-game. |
 | `python -m cms_tools.inspect_bundle PATH -o report.json` | Lists a bundle's meshes, textures, GameObjects and script data using UnityPy. Not yet run against real bundles. |
